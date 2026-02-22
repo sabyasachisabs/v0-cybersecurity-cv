@@ -6,10 +6,16 @@ import { Shield, Linkedin, Mail, MapPin, Coffee } from "lucide-react"
 const TYPING_TEXT = "20+ years in IT. Now building a career in cybersecurity."
 
 export function HeroSection() {
+  const [mounted, setMounted] = useState(false)
   const [displayText, setDisplayText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
     let index = 0
     const interval = setInterval(() => {
       if (index <= TYPING_TEXT.length) {
@@ -20,14 +26,15 @@ export function HeroSection() {
       }
     }, 40)
     return () => clearInterval(interval)
-  }, [])
+  }, [mounted])
 
   useEffect(() => {
+    if (!mounted) return
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev)
     }, 530)
     return () => clearInterval(cursorInterval)
-  }, [])
+  }, [mounted])
 
   return (
     <header className="relative pb-12 pt-16 md:pt-24 md:pb-20">

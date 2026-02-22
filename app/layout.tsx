@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Alex Chen | Cybersecurity Professional',
-  description: 'Aspiring cybersecurity analyst with expertise in network security, penetration testing, and threat analysis.',
+  title: 'Nehal | Aspiring Cybersecurity Professional',
+  description: 'Den Haag-based cybersecurity candidate with 20+ years of IT infrastructure expertise, CompTIA Security+ certified, transitioning into cybersecurity.',
   generator: 'v0.app',
   icons: {
     icon: [

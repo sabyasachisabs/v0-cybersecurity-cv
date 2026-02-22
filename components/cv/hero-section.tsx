@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Shield, Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react"
+import { Shield, Linkedin, Mail, MapPin, Coffee } from "lucide-react"
 
-const TYPING_TEXT = "Securing digital frontiers, one vulnerability at a time."
+const TYPING_TEXT = "20+ years in IT. Now building a career in cybersecurity."
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("")
@@ -45,11 +45,20 @@ export function HeroSection() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight mb-2">
-          Alex Chen
+          {"Hi, I'm Nehal"}
         </h1>
-        <p className="text-lg md:text-xl text-primary font-mono mb-6">
-          Cybersecurity Analyst
-        </p>
+
+        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-6">
+          <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 font-medium">
+            Dutch Citizen
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full bg-secondary border border-border">
+            Avid Reader
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full bg-secondary border border-border">
+            Aspiring Cybersecurity Professional
+          </span>
+        </div>
 
         <div className="font-mono text-muted-foreground text-sm md:text-base mb-8 h-6">
           <span className="text-primary/60">{">"} </span>
@@ -62,33 +71,25 @@ export function HeroSection() {
         </div>
 
         <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
-          Aspiring cybersecurity professional with a strong foundation in network security,
-          penetration testing, and threat analysis. Passionate about protecting organizations
-          from evolving cyber threats through proactive security measures and continuous learning.
+          I believe that strong security is built on a foundation of discipline and continuous learning.
+          Based in Den Haag, I&apos;m channeling 20+ years of IT infrastructure expertise into cybersecurity,
+          combining hands-on technical skills with structured problem-solving.
         </p>
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
           <span className="flex items-center gap-1.5">
             <MapPin className="w-4 h-4 text-primary/70" />
-            San Francisco, CA
+            Den Haag, Netherlands
           </span>
-          <span className="hidden md:inline text-border">|</span>
-          <a
-            href="mailto:alex.chen@email.com"
-            className="flex items-center gap-1.5 hover:text-primary transition-colors"
-          >
-            <Mail className="w-4 h-4 text-primary/70" />
-            alex.chen@email.com
-          </a>
         </div>
 
         <div className="flex items-center gap-3">
           <a
-            href="#"
+            href="mailto:nehal@email.com"
             className="flex items-center gap-2 px-4 py-2 rounded-md bg-secondary border border-border text-secondary-foreground hover:border-primary/40 hover:text-primary transition-all text-sm"
           >
-            <Github className="w-4 h-4" />
-            GitHub
+            <Mail className="w-4 h-4" />
+            Email Me
           </a>
           <a
             href="#"
@@ -98,11 +99,11 @@ export function HeroSection() {
             LinkedIn
           </a>
           <a
-            href="#"
+            href="#contact"
             className="flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition-opacity text-sm font-medium"
           >
-            <ExternalLink className="w-4 h-4" />
-            Download CV
+            <Coffee className="w-4 h-4" />
+            {"Let's Talk"}
           </a>
         </div>
       </div>

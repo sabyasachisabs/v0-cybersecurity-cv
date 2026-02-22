@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react"
 
 const NAV_ITEMS = [
-  { id: "about", label: "ABOUT" },
-  { id: "experience", label: "EXPERIENCE" },
+  { id: "about", label: "MY STORY" },
+  { id: "personality", label: "WHO I AM" },
+  { id: "denhaag", label: "WHY DEN HAAG" },
   { id: "skills", label: "SKILLS" },
-  { id: "certifications", label: "CERTIFICATIONS" },
-  { id: "projects", label: "PROJECTS" },
-  { id: "education", label: "EDUCATION" },
+  { id: "philosophy", label: "PHILOSOPHY" },
+  { id: "contact", label: "CONTACT" },
 ]
 
 export function SidebarNav() {

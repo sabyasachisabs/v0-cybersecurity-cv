@@ -1,15 +1,11 @@
-"use client"
-
 import { Coffee, Mail, Linkedin } from "lucide-react"
-import { useCVData } from "./cv-data-context"
-import { EditableText } from "./editable-text"
 
 export function ContactSection() {
   return (
     <section id="contact" className="py-12 pb-24">
       <h2 className="text-xs font-medium tracking-widest text-foreground mb-2 flex items-center gap-3">
         <span className="h-px w-8 bg-primary" />
-        <EditableText fieldPath="contact.heading" />
+        {"LET'S CONNECT"}
       </h2>
 
       <div className="rounded-lg border border-primary/30 bg-primary/5 p-6 mt-8">
@@ -18,12 +14,14 @@ export function ContactSection() {
             <Coffee className="w-5 h-5" />
           </div>
           <h3 className="text-lg font-semibold text-foreground">
-            <EditableText fieldPath="contact.title" />
+            {"Let\u2019s Grab a Coffee in Den Haag"}
           </h3>
         </div>
 
         <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
-          <EditableText fieldPath="contact.description" />
+          Looking for entry-level cybersecurity opportunities, internships, or mentorship.
+          Ready to bring structured discipline, hands-on technical skills, and 20+ years of IT
+          problem-solving to your security team. I&apos;m here, local, and eager to learn.
         </p>
 
         <div className="flex flex-wrap items-center gap-3">

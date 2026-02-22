@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { Shield, Linkedin, Mail, MapPin, Coffee } from "lucide-react"
-import { useCVData } from "./cv-data-context"
-import { EditableText } from "./editable-text"
+
+const TYPING_TEXT = "20+ years in IT. Now building a career in cybersecurity."
 
 export function HeroSection() {
-  const { data } = useCVData()
   const [mounted, setMounted] = useState(false)
   const [displayText, setDisplayText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
@@ -17,19 +16,17 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!mounted) return
-    const text = data.hero.typingText
     let index = 0
-    setDisplayText("")
     const interval = setInterval(() => {
-      if (index <= text.length) {
-        setDisplayText(text.slice(0, index))
+      if (index <= TYPING_TEXT.length) {
+        setDisplayText(TYPING_TEXT.slice(0, index))
         index++
       } else {
         clearInterval(interval)
       }
     }, 40)
     return () => clearInterval(interval)
-  }, [mounted, data.hero.typingText])
+  }, [mounted])
 
   useEffect(() => {
     if (!mounted) return
@@ -54,28 +51,20 @@ export function HeroSection() {
           <div className="h-px flex-1 bg-border" />
         </div>
 
-        <EditableText
-          fieldPath="hero.name"
-          as="h1"
-          className="text-4xl md:text-6xl font-bold text-foreground tracking-tight mb-2"
-        />
+        <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight mb-2">
+          {"Hi, I'm Nehal"}
+        </h1>
 
         <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-6">
-          <EditableText
-            fieldPath="hero.badge1"
-            as="span"
-            className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 font-medium"
-          />
-          <EditableText
-            fieldPath="hero.badge2"
-            as="span"
-            className="px-2.5 py-0.5 rounded-full bg-secondary border border-border"
-          />
-          <EditableText
-            fieldPath="hero.badge3"
-            as="span"
-            className="px-2.5 py-0.5 rounded-full bg-secondary border border-border"
-          />
+          <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 font-medium">
+            Dutch Citizen
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full bg-secondary border border-border">
+            Avid Reader
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full bg-secondary border border-border">
+            Aspiring Cybersecurity Professional
+          </span>
         </div>
 
         <div className="font-mono text-muted-foreground text-sm md:text-base mb-8 h-6">
@@ -88,16 +77,16 @@ export function HeroSection() {
           />
         </div>
 
-        <EditableText
-          fieldPath="hero.description"
-          as="p"
-          className="text-muted-foreground leading-relaxed max-w-2xl mb-8"
-        />
+        <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
+          I believe that strong security is built on a foundation of discipline and continuous learning.
+          Based in Den Haag, I&apos;m channeling 20+ years of IT infrastructure expertise into cybersecurity,
+          combining hands-on technical skills with structured problem-solving.
+        </p>
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
           <span className="flex items-center gap-1.5">
             <MapPin className="w-4 h-4 text-primary/70" />
-            <EditableText fieldPath="hero.location" as="span" />
+            Den Haag, Netherlands
           </span>
         </div>
 
